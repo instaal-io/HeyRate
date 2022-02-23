@@ -126,6 +126,11 @@
             </LinearLayout>
 
 
+            <include
+                android:visibility="gone"
+                layout="@layout/feedback_layout"/>
+
+
         </LinearLayout>
 
 

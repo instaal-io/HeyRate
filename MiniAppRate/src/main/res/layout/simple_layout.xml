@@ -81,6 +81,12 @@
 
             </LinearLayout>
 
+
+            <include
+                layout="@layout/feedback_layout"
+                android:visibility="gone" />
+
+
         </LinearLayout>
 
 
