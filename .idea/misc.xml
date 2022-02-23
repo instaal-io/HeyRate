@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Instaal/Ongoing/Library/MiniAppRate/MiniAppRate/src/main/res/layout/compact_layout.xml" value="0.371875" />
+        <entry key="..\:/Instaal/Ongoing/Library/MiniAppRate/MiniAppRate/src/main/res/layout/default_layout.xml" value="0.33" />
         <entry key="..\:/Instaal/Ongoing/Library/MiniAppRate/app/src/main/res/layout/activity_main.xml" value="0.371875" />
       </map>
     </option>
@@ -12,5 +14,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>
