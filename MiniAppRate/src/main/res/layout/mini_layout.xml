@@ -19,45 +19,6 @@
             android:orientation="vertical">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:id="@+id/title_text"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Hope you a second!"
-                    android:textColor="#777"
-                    android:textSize="17sp" />
-
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.6dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="#eee" />
-
-
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:layout_margin="5dp"
-                android:src="@drawable/default_star_icon" />
-
 
             <TextView
                 android:id="@+id/main_text"
@@ -72,7 +33,17 @@
                 android:gravity="center"
                 android:text="Share Your Experiences With Us"
                 android:textColor="#00ACC1"
-                android:textSize="22sp" />
+                android:textSize="20sp" />
+
+
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:src="@drawable/default_star_icon" />
+
 
             <RatingBar
                 android:id="@+id/ratingBar"
