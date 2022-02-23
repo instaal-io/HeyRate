@@ -19,30 +19,30 @@
             android:orientation="vertical">
 
 
-            <TextView
-                android:id="@+id/main_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginBottom="5dp"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="Would You Mind Rating Us?"
-                android:textColor="#00ACC1"
-                android:textSize="20sp" />
-
-
 
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
                 android:src="@drawable/default_star_icon" />
 
+
+            <TextView
+                android:id="@+id/main_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="15sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Do you like this App?"
+                android:textColor="#00ACC1"
+                android:textSize="22sp" />
 
             <RatingBar
                 android:id="@+id/ratingBar"

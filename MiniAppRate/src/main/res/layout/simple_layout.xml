@@ -60,7 +60,7 @@
                 android:layout_marginBottom="5dp"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
-                android:text="Are You Enjoying The App?"
+                android:text="Are You Enjoying This App?"
                 android:textColor="#00ACC1"
                 android:textSize="20sp" />
 
