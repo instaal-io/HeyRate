@@ -59,7 +59,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="30dp"
                 android:gravity="center"
-                android:text="Please take a moment and rate the app or submit a feedback."
+                android:text="@string/desc_title"
                 android:textColor="@color/secondary_text_color"
                 android:textSize="16sp" />
 
@@ -85,7 +85,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="Maybe later"
+                        android:text="@string/maybe_later"
                         android:textColor="@color/secondary_text_color"
                         android:textSize="16sp" />
 
@@ -105,7 +105,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="Rate Now"
+                        android:text="@string/rate_now"
                         android:textColor="#fff"
                         android:textSize="16sp" />
 
