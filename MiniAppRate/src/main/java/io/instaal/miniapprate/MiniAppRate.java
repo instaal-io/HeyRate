@@ -103,7 +103,27 @@ public class MiniAppRate {
         dialog.setCancelable(true);
 
 
+        LinearLayout ratingLayout = dialog.findViewById(R.id.rating_layout);
+        LinearLayout feedbackLayout = dialog.findViewById(R.id.feedback_layout);
 
+        ratingLayout.setVisibility(View.VISIBLE);
+        feedbackLayout.setVisibility(View.GONE);
+
+
+        TextView feedbackButton = dialog.findViewById(R.id.feedback_button);
+        feedbackButton.setOnClickListener(view -> {
+
+            if (ratingLayout.getVisibility()== View.VISIBLE){
+                ratingLayout.setVisibility(View.GONE);
+                feedbackLayout.setVisibility(View.VISIBLE);
+            } else {
+                ratingLayout.setVisibility(View.VISIBLE);
+                feedbackLayout.setVisibility(View.GONE);
+            }
+
+
+
+        });
 
         dialog.show();
     }
