@@ -35,7 +35,7 @@
                     android:layout_marginEnd="10dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Share Your Experiences"
+                    android:text="@string/share_your_experiences"
                     android:textColor="@color/theme_color_main"
                     android:textSize="17sp" />
 
