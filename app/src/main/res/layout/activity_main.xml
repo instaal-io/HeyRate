@@ -9,6 +9,27 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/simple_theme"
+        android:layout_margin="10dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="10dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Simple"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/default_theme"
         android:layout_margin="10dp"
         android:layout_width="100dp"
@@ -28,9 +49,8 @@
 
     </androidx.cardview.widget.CardView>
 
-
     <androidx.cardview.widget.CardView
-        android:id="@+id/smart_theme"
+        android:id="@+id/advanced_theme"
         android:layout_margin="10dp"
         android:layout_width="100dp"
         android:layout_height="50dp"
@@ -43,27 +63,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="Smart"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/fancy_theme"
-        android:layout_margin="10dp"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        app:cardBackgroundColor="@color/colorPrimary"
-        app:cardCornerRadius="10dp">
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Fancy"
+            android:text="Advanced"
             android:textColor="@color/white"
             android:textSize="18sp" />
 

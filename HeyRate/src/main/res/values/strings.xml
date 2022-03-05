@@ -8,4 +8,7 @@
     <string name="desc_title">Please take a moment and rate the app or submit a feedback.</string>
     <string name="maybe_later">Maybe later</string>
     <string name="rate_now">Rate Now</string>
+    <string name="how_could_we_do_better_give_us_some_suggestions">How could we do better? Give us some suggestions</string>
+    <string name="cancel">Cancel</string>
+    <string name="send">Send</string>
 </resources>

@@ -14,9 +14,9 @@ import androidx.cardview.widget.CardView;
 
 public class HeyRate {
 
+    public static final String SIMPLE_THEME = "simple";
     public static final String DEFAULT_THEME = "default";
-    public static final String SMART_THEME = "smart";
-    public static final String FANCY_THEME = "fancy";
+    public static final String ADVANCED_THEME = "advanced";
     private final Activity activity;
     SharedPreferences sharedPreferences;
     boolean isRatingMode = true;
@@ -33,11 +33,11 @@ public class HeyRate {
 
     public void start() {
         switch (THEME) {
-            case SMART_THEME:
-                showSmartDialog();
+            case ADVANCED_THEME:
+                showAdvancedDialog();
                 break;
-            case FANCY_THEME:
-                showFancyDialog();
+            case SIMPLE_THEME:
+                showSimpleDialog();
                 break;
             case DEFAULT_THEME:
             default:
@@ -47,7 +47,7 @@ public class HeyRate {
 
     }
 
-    private void showDefaultDialog() {
+    private void showSimpleDialog() {
         Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.simple_layout);
@@ -82,7 +82,7 @@ public class HeyRate {
 
     }
 
-    private void showSmartDialog() {
+    private void showDefaultDialog() {
         Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.default_layout);
@@ -117,7 +117,7 @@ public class HeyRate {
         dialog.show();
     }
 
-    private void showFancyDialog() {
+    private void showAdvancedDialog() {
         Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.advanced_layout);

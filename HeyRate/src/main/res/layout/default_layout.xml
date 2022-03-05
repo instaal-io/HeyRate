@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center">
@@ -26,7 +27,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
-                android:src="@drawable/rating_default_icon" />
+                android:src="@drawable/rating_default_icon"
+                tools:ignore="ContentDescription" />
 
 
             <LinearLayout
@@ -80,7 +82,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Feedback"
+                        android:text="@string/feedback"
                         android:textColor="@color/theme_color_main"
                         android:textSize="16sp" />
 
@@ -91,7 +93,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Later"
+                        android:text="@string/later"
                         android:textColor="#666"
                         android:textSize="16sp" />
 
@@ -119,7 +121,7 @@
                     android:gravity="center"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
-                    android:text="Feedback"
+                    android:text="@string/feedback"
                     android:textColor="@color/theme_color_main"
                     android:textSize="20sp" />
 
@@ -130,12 +132,13 @@
                     android:layout_margin="10dp"
                     android:background="@drawable/edit_text_back"
                     android:gravity="top|start"
-                    android:hint="How could we do better? Give us some suggestions"
+                    android:hint="@string/how_could_we_do_better_give_us_some_suggestions"
                     android:inputType="textMultiLine|textCapSentences"
                     android:padding="5dp"
                     android:scrollbars="vertical"
                     android:textColor="#444"
-                    android:textColorHint="#999" />
+                    android:textColorHint="#999"
+                    tools:ignore="Autofill" />
 
 
                 <LinearLayout
@@ -158,7 +161,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:text="Cancel"
+                            android:text="@string/cancel"
                             android:textSize="16sp" />
 
 
@@ -181,7 +184,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:text="Send"
+                            android:text="@string/send"
                             android:textColor="#fff"
                             android:textSize="16sp" />
 

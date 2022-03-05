@@ -14,26 +14,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CardView default_theme = findViewById(R.id.default_theme);
+        CardView default_theme = findViewById(R.id.simple_theme);
         default_theme.setOnClickListener(view -> {
+            new HeyRate(this)
+                    .setTheme(HeyRate.SIMPLE_THEME)
+                    .start();
+
+        });
+
+        CardView mini_theme = findViewById(R.id.default_theme);
+        mini_theme.setOnClickListener(view -> {
             new HeyRate(this)
                     .setTheme(HeyRate.DEFAULT_THEME)
                     .start();
 
         });
 
-        CardView mini_theme = findViewById(R.id.smart_theme);
-        mini_theme.setOnClickListener(view -> {
-            new HeyRate(this)
-                    .setTheme(HeyRate.SMART_THEME)
-                    .start();
-
-        });
-
-        CardView simple_theme = findViewById(R.id.fancy_theme);
+        CardView simple_theme = findViewById(R.id.advanced_theme);
         simple_theme.setOnClickListener(view -> {
             new HeyRate(this)
-                    .setTheme(HeyRate.FANCY_THEME)
+                    .setTheme(HeyRate.ADVANCED_THEME)
                     .start();
 
         });
