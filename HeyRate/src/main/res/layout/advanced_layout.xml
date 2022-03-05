@@ -18,11 +18,16 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop" />
 
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/animation_view"
@@ -31,7 +36,7 @@
                     android:layout_marginTop="10dp"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/facny_animations" />
+                    app:lottie_rawRes="@raw/facny_animation_1" />
 
                 <LinearLayout
                     android:id="@+id/rating_layout"
@@ -112,7 +117,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
 
                     <TextView
@@ -200,9 +205,6 @@
                 </LinearLayout>
 
 
-
-
-            </LinearLayout>
 
         </LinearLayout>
 
