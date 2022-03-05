@@ -5,7 +5,7 @@ import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
 
-import io.instaal.miniapprate.MiniAppRate;
+import io.instaal.HeyRate.HeyRate;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,24 +16,24 @@ public class MainActivity extends AppCompatActivity {
 
         CardView default_theme = findViewById(R.id.default_theme);
         default_theme.setOnClickListener(view -> {
-            new MiniAppRate(this)
-                    .setTheme(MiniAppRate.DEFAULT_THEME)
+            new HeyRate(this)
+                    .setTheme(HeyRate.DEFAULT_THEME)
                     .start();
 
         });
 
         CardView mini_theme = findViewById(R.id.smart_theme);
         mini_theme.setOnClickListener(view -> {
-            new MiniAppRate(this)
-                    .setTheme(MiniAppRate.SMART_THEME)
+            new HeyRate(this)
+                    .setTheme(HeyRate.SMART_THEME)
                     .start();
 
         });
 
         CardView simple_theme = findViewById(R.id.fancy_theme);
         simple_theme.setOnClickListener(view -> {
-            new MiniAppRate(this)
-                    .setTheme(MiniAppRate.FANCY_THEME)
+            new HeyRate(this)
+                    .setTheme(HeyRate.FANCY_THEME)
                     .start();
 
         });

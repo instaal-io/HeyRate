@@ -81,7 +81,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="Feedback"
-                        android:textColor="#1E88E5"
+                        android:textColor="@color/theme_color_main"
                         android:textSize="16sp" />
 
 

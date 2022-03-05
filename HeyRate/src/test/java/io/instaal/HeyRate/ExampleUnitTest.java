@@ -1,4 +1,4 @@
-package io.instaal.miniapprate;
+package io.instaal.HeyRate;
 
 import org.junit.Test;
 

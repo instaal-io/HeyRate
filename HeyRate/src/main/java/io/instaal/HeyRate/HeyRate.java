@@ -1,4 +1,4 @@
-package io.instaal.miniapprate;
+package io.instaal.HeyRate;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -9,7 +9,10 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MiniAppRate {
+import androidx.cardview.widget.CardView;
+
+
+public class HeyRate {
 
     public static final String DEFAULT_THEME = "default";
     public static final String SMART_THEME = "smart";
@@ -21,9 +24,9 @@ public class MiniAppRate {
     private final int APP_ICON = 0;
 
 
-    public MiniAppRate(Activity activity) {
+    public HeyRate(Activity activity) {
         this.activity = activity;
-        sharedPreferences = this.activity.getApplicationContext().getSharedPreferences("MiniAppRate", Activity.MODE_PRIVATE);
+        sharedPreferences = this.activity.getApplicationContext().getSharedPreferences("HeyRate", Activity.MODE_PRIVATE);
 
     }
 
@@ -47,12 +50,32 @@ public class MiniAppRate {
     private void showDefaultDialog() {
         Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.default_layout);
+        dialog.setContentView(R.layout.simple_layout);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.getWindow().setLayout(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
         dialog.setCancelable(true);
 
+        LinearLayout ratingLayout = dialog.findViewById(R.id.rating_layout);
+        LinearLayout feedbackLayout = dialog.findViewById(R.id.feedback_layout);
 
+        ratingLayout.setVisibility(View.VISIBLE);
+        feedbackLayout.setVisibility(View.GONE);
+
+
+        CardView feedbackButton = dialog.findViewById(R.id.feedback_button);
+        feedbackButton.setOnClickListener(view -> {
+
+            if (ratingLayout.getVisibility()== View.VISIBLE){
+                ratingLayout.setVisibility(View.GONE);
+                feedbackLayout.setVisibility(View.VISIBLE);
+            } else {
+                ratingLayout.setVisibility(View.VISIBLE);
+                feedbackLayout.setVisibility(View.GONE);
+            }
+
+
+
+        });
 
 
         dialog.show();
@@ -62,7 +85,7 @@ public class MiniAppRate {
     private void showSmartDialog() {
         Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.smart_layout);
+        dialog.setContentView(R.layout.default_layout);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.getWindow().setLayout(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
         dialog.setCancelable(true);
@@ -97,7 +120,7 @@ public class MiniAppRate {
     private void showFancyDialog() {
         Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.fancy_layout);
+        dialog.setContentView(R.layout.advanced_layout);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.getWindow().setLayout(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
         dialog.setCancelable(true);
@@ -129,7 +152,7 @@ public class MiniAppRate {
     }
 
 
-    public MiniAppRate setTheme(String theme) {
+    public HeyRate setTheme(String theme) {
         THEME = theme;
         return this;
     }
