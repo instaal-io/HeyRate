@@ -25,9 +25,10 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
+                android:layout_marginBottom="20dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/fancy_image_1"
                 android:scaleType="centerCrop"
+                android:src="@drawable/fancy_image_1"
                 android:visibility="visible" />
 
             <com.airbnb.lottie.LottieAnimationView
@@ -35,25 +36,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
                 android:visibility="gone"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
                 app:lottie_rawRes="@raw/fancy_animation_9" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/rating_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:orientation="vertical">
-
 
                 <TextView
                     android:id="@+id/main_text"
-                    android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
                     android:layout_marginStart="15sp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="15dp"
                     android:layout_marginBottom="20dp"
                     android:fontFamily="sans-serif-medium"
@@ -69,6 +72,7 @@
                     android:id="@+id/ratingBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
                     android:layout_gravity="center"
                     android:numStars="5"
                     android:progressBackgroundTint="#ccc"
@@ -81,8 +85,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_marginTop="20sp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
                     android:gravity="center"
                     android:orientation="horizontal">
 
@@ -112,29 +116,27 @@
                 </LinearLayout>
 
 
-            </LinearLayout>
+            </RelativeLayout>
 
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/feedback_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="visible">
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:layout_marginStart="15sp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="5dp"
                     android:fontFamily="sans-serif-medium"
                     android:gravity="center"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
                     android:text="Feedback"
                     android:textColor="@color/theme_color_main"
                     android:textSize="20sp" />
@@ -143,7 +145,12 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="16sp"
                     android:background="@drawable/edit_text_back"
                     android:gravity="top|start"
                     android:hint="How could we do better? Give us some suggestions"
@@ -156,57 +163,33 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/not_now_button"
+                    <TextView
                         android:layout_width="0dp"
-                        android:layout_height="40dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        app:cardCornerRadius="10dp">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:text="Cancel"
-                            android:textSize="16sp" />
+                        android:gravity="center"
+                        android:text="Cancel"
+                        android:textColor="@color/secondary_text_color"
+                        android:textSize="16sp" />
 
 
-                    </androidx.cardview.widget.CardView>
-
-                    <View
+                    <TextView
                         android:layout_width="0dp"
-                        android:layout_height="10dp"
-                        android:layout_weight="0.2" />
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/update_button"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        app:cardBackgroundColor="@color/theme_color_main"
-                        app:cardCornerRadius="10dp">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:text="Send"
-                            android:textColor="#fff"
-                            android:textSize="16sp" />
-
-                    </androidx.cardview.widget.CardView>
+                        android:gravity="center"
+                        android:text="Send"
+                        android:textColor="@color/theme_color_main"
+                        android:textSize="16sp" />
 
 
                 </LinearLayout>
-
-            </LinearLayout>
+            </RelativeLayout>
 
 
         </LinearLayout>
