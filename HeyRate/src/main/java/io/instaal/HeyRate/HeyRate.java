@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -19,10 +18,18 @@ public class HeyRate {
     public static final String DEFAULT_THEME = "default";
     public static final String ADVANCED_THEME = "advanced";
     private final Activity activity;
+    private final int APP_ICON = 0;
     SharedPreferences sharedPreferences;
     boolean isRatingMode = true;
     private String THEME = "default";
-    private final int APP_ICON = 0;
+    private String main_title = "";
+    private String main_des = "";
+    private String feedback_button_text = "";
+    private String rate_button_text = "";
+    private String feedback_title = "";
+    private String edit_text_hint = "";
+    private String cancel_button_text = "";
+    private String send_button_text = "";
 
 
     public HeyRate(Activity activity) {
@@ -62,18 +69,51 @@ public class HeyRate {
         ratingLayout.setVisibility(View.VISIBLE);
         feedbackLayout.setVisibility(View.GONE);
 
+        TextView mainTitle, desc, feedBackButtonText, rateNowButtonText, feedbackTitle, cancelButtonText, sendButtonText;
 
-        CardView feedbackButton = dialog.findViewById(R.id.feedback_button);
+        mainTitle = dialog.findViewById(R.id.main_text);
+        desc = dialog.findViewById(R.id.description);
+        feedBackButtonText = dialog.findViewById(R.id.feedback_button);
+        rateNowButtonText = dialog.findViewById(R.id.rate_button);
+        feedbackTitle = dialog.findViewById(R.id.feedback_text);
+        cancelButtonText = dialog.findViewById(R.id.cancel_button);
+        sendButtonText = dialog.findViewById(R.id.send_button);
+
+        if (!main_title.equals("")) {
+            mainTitle.setText(main_title);
+        }
+        if (!main_des.equals("")) {
+            mainTitle.setText(main_title);
+        }
+
+        if (!feedback_button_text.equals("")) {
+            feedBackButtonText.setText(feedback_button_text);
+        }
+        if (!rate_button_text.equals("")) {
+            rateNowButtonText.setText(rate_button_text);
+        }
+        if (!feedback_title.equals("")) {
+            feedbackTitle.setText(feedback_title);
+        }
+        if (!cancel_button_text.equals("")) {
+            cancelButtonText.setText(cancel_button_text);
+        }
+
+        if (!send_button_text.equals("")) {
+            sendButtonText.setText(send_button_text);
+        }
+
+
+        CardView feedbackButton = dialog.findViewById(R.id.feedback_card);
         feedbackButton.setOnClickListener(view -> {
 
-            if (ratingLayout.getVisibility()== View.VISIBLE){
+            if (ratingLayout.getVisibility() == View.VISIBLE) {
                 ratingLayout.setVisibility(View.GONE);
                 feedbackLayout.setVisibility(View.VISIBLE);
             } else {
                 ratingLayout.setVisibility(View.VISIBLE);
                 feedbackLayout.setVisibility(View.GONE);
             }
-
 
 
         });
@@ -101,7 +141,7 @@ public class HeyRate {
         TextView feedbackButton = dialog.findViewById(R.id.feedback_button);
         feedbackButton.setOnClickListener(view -> {
 
-            if (ratingLayout.getVisibility()== View.VISIBLE){
+            if (ratingLayout.getVisibility() == View.VISIBLE) {
                 ratingLayout.setVisibility(View.GONE);
                 feedbackLayout.setVisibility(View.VISIBLE);
             } else {
@@ -110,9 +150,7 @@ public class HeyRate {
             }
 
 
-
         });
-
 
 
         dialog.show();
@@ -137,14 +175,13 @@ public class HeyRate {
         TextView feedbackButton = dialog.findViewById(R.id.feedback_button);
         feedbackButton.setOnClickListener(view -> {
 
-            if (ratingLayout.getVisibility()== View.VISIBLE){
+            if (ratingLayout.getVisibility() == View.VISIBLE) {
                 ratingLayout.setVisibility(View.GONE);
                 feedbackLayout.setVisibility(View.VISIBLE);
             } else {
                 ratingLayout.setVisibility(View.VISIBLE);
                 feedbackLayout.setVisibility(View.GONE);
             }
-
 
 
         });
@@ -158,5 +195,45 @@ public class HeyRate {
         return this;
     }
 
+
+    public HeyRate setTitle(String title) {
+        main_title = title;
+        return this;
+    }
+
+    public HeyRate setFeedbackTitle(String feedbackTitle) {
+        feedback_title = feedbackTitle;
+        return this;
+    }
+
+    public HeyRate setDescription(String description) {
+        main_des = description;
+        return this;
+    }
+
+    public HeyRate setFeedbackButtonText(String feedbackButtonText) {
+        feedback_button_text = feedbackButtonText;
+        return this;
+    }
+
+    public HeyRate setRateButtonText(String rateButtonText) {
+        rate_button_text = rateButtonText;
+        return this;
+    }
+
+    public HeyRate setEditTextHint(String editTextHint) {
+        edit_text_hint = editTextHint;
+        return this;
+    }
+
+    public HeyRate setCancelButtonText(String cancelButtonText) {
+        cancel_button_text = cancelButtonText;
+        return this;
+    }
+
+    public HeyRate setSendButtonText(String sendButtonText) {
+        send_button_text = sendButtonText;
+        return this;
+    }
 
 }

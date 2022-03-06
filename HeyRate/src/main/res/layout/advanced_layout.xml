@@ -75,6 +75,7 @@
                     android:layout_centerInParent="true"
                     android:layout_gravity="center"
                     android:numStars="5"
+                    android:paddingTop="20dp"
                     android:progressBackgroundTint="#ccc"
                     android:progressTint="#FFA000"
                     android:scaleX="0.8"

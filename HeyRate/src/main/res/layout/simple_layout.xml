@@ -67,7 +67,6 @@
                     android:layout_marginEnd="20dp"
                     android:gravity="center"
                     android:text="@string/desc_title"
-
                     android:textColor="@color/secondary_text_color"
                     android:textSize="16sp" />
 
@@ -188,27 +187,27 @@
 
 
                 <LinearLayout
-                    android:layout_alignParentBottom="true"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/cancel_card"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
-                        android:id="@+id/cancel_card"
                         android:layout_marginEnd="1dp"
                         android:layout_weight="1"
                         app:cardBackgroundColor="#eee"
                         app:cardCornerRadius="2dp">
 
                         <TextView
+                            android:id="@+id/cancel_button"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:id="@+id/cancel_button"
                             android:text="@string/cancel"
                             android:textColor="@color/secondary_text_color"
                             android:textSize="16sp" />
@@ -218,20 +217,20 @@
 
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/send_card"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="1dp"
-                        android:id="@+id/send_card"
                         android:layout_weight="1"
                         app:cardBackgroundColor="@color/theme_color_main"
                         app:cardCornerRadius="2dp">
 
                         <TextView
+                            android:id="@+id/send_button"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:text="@string/send"
-                            android:id="@+id/send_button"
                             android:textColor="#fff"
                             android:textSize="16sp" />
 
