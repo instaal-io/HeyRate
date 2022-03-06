@@ -51,7 +51,7 @@
                     android:gravity="center"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
-                    android:text="@string/share_your_experiences_with_us"
+                    android:text="@string/desc"
                     android:textColor="@color/theme_color_main"
                     android:textSize="20sp" />
 
@@ -138,13 +138,13 @@
                     android:layout_marginEnd="15dp"
                     android:background="@drawable/edit_text_back"
                     android:gravity="top|start"
-                    android:textSize="16sp"
                     android:hint="How could we do better? Give us some suggestions"
                     android:inputType="textMultiLine|textCapSentences"
                     android:padding="5dp"
                     android:scrollbars="vertical"
                     android:textColor="#444"
-                    android:textColorHint="#999" />
+                    android:textColorHint="#999"
+                    android:textSize="16sp" />
 
 
                 <LinearLayout

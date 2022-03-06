@@ -2,7 +2,7 @@
 <resources>
     <string name="feedback">Feedback</string>
     <string name="later">Later</string>
-    <string name="share_your_experiences_with_us">How do you like our app?</string>
+    <string name="desc">How was your experience with us?</string>
     <string name="hope_you_a_second">Hope you a second!</string>
     <string name="share_your_experiences">Share Your Experiences</string>
     <string name="desc_title">Please take a moment and rate the app or submit a feedback.</string>
