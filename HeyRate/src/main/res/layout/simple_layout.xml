@@ -67,8 +67,8 @@
                     android:layout_marginEnd="20dp"
                     android:gravity="center"
                     android:text="@string/desc_title"
-                    android:textColor="@color/secondary_text_color"
 
+                    android:textColor="@color/secondary_text_color"
                     android:textSize="16sp" />
 
 
@@ -166,7 +166,6 @@
                 </LinearLayout>
 
 
-
                 <EditText
                     android:id="@+id/edit_text"
                     android:layout_width="match_parent"
@@ -199,6 +198,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="40dp"
+                        android:id="@+id/cancel_card"
                         android:layout_marginEnd="1dp"
                         android:layout_weight="1"
                         app:cardBackgroundColor="#eee"
@@ -208,6 +208,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
+                            android:id="@+id/cancel_button"
                             android:text="@string/cancel"
                             android:textColor="@color/secondary_text_color"
                             android:textSize="16sp" />
@@ -220,6 +221,7 @@
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="1dp"
+                        android:id="@+id/send_card"
                         android:layout_weight="1"
                         app:cardBackgroundColor="@color/theme_color_main"
                         app:cardCornerRadius="2dp">
@@ -229,6 +231,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:text="@string/send"
+                            android:id="@+id/send_button"
                             android:textColor="#fff"
                             android:textSize="16sp" />
 
