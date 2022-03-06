@@ -101,7 +101,6 @@
                         android:textColor="@color/theme_color_main"
                         android:textSize="16sp" />
 
-
                     <TextView
                         android:id="@+id/later_button"
                         android:layout_width="0dp"
