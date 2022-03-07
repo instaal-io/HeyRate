@@ -15,6 +15,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        HeyRate heyRate = new HeyRate(this);
+        heyRate.start();
+
+
         CardView default_theme = findViewById(R.id.simple_theme);
         default_theme.setOnClickListener(view ->
                 new HeyRate(this)
