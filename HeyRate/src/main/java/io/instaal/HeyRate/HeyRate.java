@@ -5,8 +5,10 @@ import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.net.Uri;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
@@ -43,6 +45,7 @@ public class HeyRate {
     private int positive_button_text_color = 0;
     private int negative_button_color = 0;
     private boolean isCancelable = true;
+    private String contact_email = "";
 
     public HeyRate(Activity activity) {
         this.activity = activity;
@@ -95,7 +98,7 @@ public class HeyRate {
 
         EditText editText = dialog.findViewById(R.id.edit_text);
 
-        if (!edit_text_hint.equals("")){
+        if (!edit_text_hint.equals("")) {
             editText.setHint(edit_text_hint);
         }
 
@@ -198,15 +201,14 @@ public class HeyRate {
         });
 
 
-
         cancelCard.setOnClickListener(view -> dialog.dismiss());
         rateNowCard.setOnClickListener(view -> {
             dialog.dismiss();
             launchStore();
         });
         sendCard.setOnClickListener(view -> {
-            if (editText.getText().length()<25){
-               editText.setError("" + (25 - editText.getText().length()) + " more characters to go");
+            if (editText.getText().length() < 25) {
+                editText.setError("" + (25 - editText.getText().length()) + " more characters to go");
             } else {
                 dialog.dismiss();
                 sendEmail(editText.getText().toString());
@@ -284,7 +286,7 @@ public class HeyRate {
         dialog.show();
     }
 
-    private void launchStore(){
+    private void launchStore() {
         Uri uri = Uri.parse("market://details?id=" + activity.getPackageName());
         Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
         goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
@@ -298,8 +300,36 @@ public class HeyRate {
         }
     }
 
-    private void sendEmail(String message){
-        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show();
+    private void sendEmail(String message) {
+        Log.e("TAG", "sendEmail: called" );
+        final String packageName = activity.getPackageName();
+        PackageManager packageManager = activity.getPackageManager();
+        String appName;
+        try {
+            appName = (String) packageManager.getApplicationLabel(packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA));
+        } catch (PackageManager.NameNotFoundException e) {
+            appName = "App";
+            e.printStackTrace();
+        }
+
+        if (!contact_email.equals("")) {
+            String[] emails = {contact_email};
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            intent.setData(Uri.parse("mailto:"));
+            intent.putExtra(Intent.EXTRA_EMAIL, emails);
+            intent.putExtra(Intent.EXTRA_TEXT, message);
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback About " + appName);
+            try {
+                activity.startActivity(Intent.createChooser(intent, "Choose"));
+            } catch (ActivityNotFoundException activityNotFoundException) {
+                Log.e("TAG", "sendEmail: ", activityNotFoundException);
+            }
+        } else {
+            Log.e("TAG", "sendEmail: Failed, No Email Set");
+        }
+
+
+
     }
 
     public HeyRate setTheme(String theme) {
@@ -378,5 +408,9 @@ public class HeyRate {
         return this;
     }
 
+    public HeyRate setContactEmail(String contactEmail) {
+        contact_email = contactEmail;
+        return this;
+    }
 
 }

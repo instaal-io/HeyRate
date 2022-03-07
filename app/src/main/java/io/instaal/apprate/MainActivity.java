@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 .setCancelButtonText("No")
                 .setSendButtonText("Done")
                 .setEditTextHint("Write Your Feedback")
+                .setContactEmail("kmrejowan@gmail.com")
                 .start());
 
         CardView mini_theme = findViewById(R.id.default_theme);
