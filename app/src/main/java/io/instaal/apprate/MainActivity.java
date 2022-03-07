@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
                     .setFeedbackTitle("Message")
                     .setCancelButtonText("No")
                     .setSendButtonText("Done")
+                    .setEditTextHint("Write Your Feedback")
                     .start();
 
         });
