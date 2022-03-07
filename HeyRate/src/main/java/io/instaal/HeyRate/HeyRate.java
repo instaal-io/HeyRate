@@ -29,7 +29,6 @@ public class HeyRate {
     private final Activity activity;
     private final int APP_ICON = 0;
     SharedPreferences sharedPreferences;
-    boolean isRatingMode = true;
     private String THEME = "default";
     private String main_title = "";
     private String main_des = "";
@@ -46,6 +45,7 @@ public class HeyRate {
     private int negative_button_color = 0;
     private boolean isCancelable = true;
     private String contact_email = "";
+    private int show_after_launch = 0;
 
     public HeyRate(Activity activity) {
         this.activity = activity;
@@ -53,8 +53,26 @@ public class HeyRate {
 
     }
 
-
     public void start() {
+        boolean isRated = sharedPreferences.getBoolean("isRated", false);
+        Log.d("TAG", "start: " + isRated);
+        if (!isRated){
+            if (show_after_launch == 0) {
+                chooseTheme();
+            } else {
+                int LAUNCH_COUNT = sharedPreferences.getInt("LAUNCHES", 0);
+                sharedPreferences.edit().putInt("LAUNCHES", ++LAUNCH_COUNT).apply();
+                if (LAUNCH_COUNT >= show_after_launch) {
+                    chooseTheme();
+                    sharedPreferences.edit().putInt("LAUNCHES", 0).apply();
+                }
+            }
+        }
+    }
+
+
+
+    private void chooseTheme(){
         switch (THEME) {
             case ADVANCED_THEME:
                 showAdvancedDialog();
@@ -70,12 +88,14 @@ public class HeyRate {
 
     }
 
+
+
     private void showSimpleDialog() {
         Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.simple_layout);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-        dialog.getWindow().setLayout(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
         dialog.setCancelable(isCancelable);
 
         RelativeLayout ratingLayout = dialog.findViewById(R.id.rating_layout);
@@ -225,8 +245,8 @@ public class HeyRate {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.default_layout);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-        dialog.getWindow().setLayout(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
-        dialog.setCancelable(true);
+        dialog.getWindow().setLayout(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+        dialog.setCancelable(isCancelable);
 
         RelativeLayout ratingLayout = dialog.findViewById(R.id.rating_layout);
         RelativeLayout feedbackLayout = dialog.findViewById(R.id.feedback_layout);
@@ -258,8 +278,8 @@ public class HeyRate {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.advanced_layout);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-        dialog.getWindow().setLayout(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
-        dialog.setCancelable(true);
+        dialog.getWindow().setLayout(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+        dialog.setCancelable(isCancelable);
 
 
         RelativeLayout ratingLayout = dialog.findViewById(R.id.rating_layout);
@@ -292,6 +312,7 @@ public class HeyRate {
         goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
                 Intent.FLAG_ACTIVITY_NEW_DOCUMENT |
                 Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+        sharedPreferences.edit().putBoolean("isRated", true).apply();
         try {
             activity.startActivity(goToMarket);
         } catch (ActivityNotFoundException e) {
@@ -410,6 +431,11 @@ public class HeyRate {
 
     public HeyRate setContactEmail(String contactEmail) {
         contact_email = contactEmail;
+        return this;
+    }
+
+    public HeyRate setShowAfterLaunch(int showAfterLaunch){
+        show_after_launch = showAfterLaunch;
         return this;
     }
 
