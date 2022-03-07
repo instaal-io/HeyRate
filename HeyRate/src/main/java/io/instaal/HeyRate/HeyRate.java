@@ -30,7 +30,12 @@ public class HeyRate {
     private String edit_text_hint = "";
     private String cancel_button_text = "";
     private String send_button_text = "";
-
+    private int primary_color = 0;
+    private int secondary_color = 0;
+    private int background_color = 0;
+    private int positive_button_color = 0;
+    private int negative_button_color = 0;
+    private boolean isCancelable = false;
 
     public HeyRate(Activity activity) {
         this.activity = activity;
@@ -83,7 +88,7 @@ public class HeyRate {
             mainTitle.setText(main_title);
         }
         if (!main_des.equals("")) {
-            mainTitle.setText(main_title);
+            desc.setText(main_des);
         }
 
         if (!feedback_button_text.equals("")) {
@@ -235,5 +240,25 @@ public class HeyRate {
         send_button_text = sendButtonText;
         return this;
     }
+
+//    private int primary_color = 0;
+//    private int secondary_color = 0;
+//    private int background_color = 0;
+//    private int positive_button_color = 0;
+//    private int negative_button_color = 0;
+//    private boolean isCancelable = false;
+
+    public HeyRate setPrimaryColor(int primaryColor){
+        primary_color = primaryColor;
+        return this;
+    }
+
+    public HeyRate setSecondaryColor(int secondaryColor){
+        secondary_color = secondaryColor;
+        return this;
+    }
+
+
+
 
 }

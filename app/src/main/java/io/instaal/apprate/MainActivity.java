@@ -18,6 +18,13 @@ public class MainActivity extends AppCompatActivity {
         default_theme.setOnClickListener(view -> {
             new HeyRate(this)
                     .setTheme(HeyRate.SIMPLE_THEME)
+                    .setTitle("Do You Like This App?")
+                    .setDescription("Please Give Us a Review")
+                    .setFeedbackButtonText("Message")
+                    .setRateButtonText("Rate")
+                    .setFeedbackTitle("Message")
+                    .setCancelButtonText("No")
+                    .setSendButtonText("Done")
                     .start();
 
         });
