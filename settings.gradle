@@ -14,6 +14,6 @@ dependencyResolutionManagement {
 
     }
 }
-rootProject.name = "Minimalist App Rate"
+rootProject.name = "Hey Rate"
 include ':app'
 include ':HeyRate'

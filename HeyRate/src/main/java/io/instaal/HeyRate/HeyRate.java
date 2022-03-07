@@ -3,6 +3,7 @@ package io.instaal.HeyRate;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
@@ -10,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 
 
 public class HeyRate {
@@ -33,9 +35,9 @@ public class HeyRate {
     private int primary_color = 0;
     private int secondary_color = 0;
     private int background_color = 0;
-    private int positive_button_color = 0;
+    private int positive_button_text_color = 0;
     private int negative_button_color = 0;
-    private boolean isCancelable = false;
+    private boolean isCancelable = true;
 
     public HeyRate(Activity activity) {
         this.activity = activity;
@@ -66,12 +68,14 @@ public class HeyRate {
         dialog.setContentView(R.layout.simple_layout);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.getWindow().setLayout(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
-        dialog.setCancelable(true);
+        dialog.setCancelable(isCancelable);
 
         RelativeLayout ratingLayout = dialog.findViewById(R.id.rating_layout);
         RelativeLayout feedbackLayout = dialog.findViewById(R.id.feedback_layout);
 
         CardView feedbackCard = dialog.findViewById(R.id.feedback_card);
+        CardView rateNowCard = dialog.findViewById(R.id.rate_now_card);
+        CardView sendCard = dialog.findViewById(R.id.send_card);
 
         TextView mainTitle, desc, feedBackButtonText, rateNowButtonText, feedbackTitle, cancelButtonText, sendButtonText;
         mainTitle = dialog.findViewById(R.id.main_text);
@@ -112,6 +116,35 @@ public class HeyRate {
             sendButtonText.setText(send_button_text);
         }
 
+        if (primary_color!=0){
+            try {
+                mainTitle.setTextColor(ContextCompat.getColor(activity,primary_color));
+                feedbackTitle.setTextColor(ContextCompat.getColor(activity, primary_color));
+                rateNowCard.setCardBackgroundColor(ContextCompat.getColor(activity, primary_color));
+                sendCard.setCardBackgroundColor(ContextCompat.getColor(activity, primary_color));
+
+            }
+            catch (Resources.NotFoundException notFoundException){
+                mainTitle.setTextColor(primary_color);
+                feedbackTitle.setTextColor(primary_color);
+                rateNowCard.setCardBackgroundColor(primary_color);
+                sendCard.setCardBackgroundColor(primary_color);
+
+            }
+
+        }
+        if (secondary_color!=0){
+
+        }
+        if (background_color!=0){
+
+        }
+        if (positive_button_text_color !=0){
+
+        }
+        if (negative_button_color!=0){
+
+        }
 
         feedbackCard.setOnClickListener(view -> {
             if (ratingLayout.getVisibility() == View.VISIBLE) {
@@ -258,8 +291,8 @@ public class HeyRate {
         return  this;
     }
 
-    public HeyRate setPositiveButtonColor(int positiveButtonColor){
-        positive_button_color = positiveButtonColor;
+    public HeyRate setPositiveButtonTextColor(int positiveButtonTextColor){
+        positive_button_text_color = positiveButtonTextColor;
         return this;
     }
 
