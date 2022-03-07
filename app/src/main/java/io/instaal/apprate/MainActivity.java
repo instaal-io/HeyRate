@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
         CardView default_theme = findViewById(R.id.simple_theme);
         default_theme.setOnClickListener(view ->
                 new HeyRate(this)
@@ -40,17 +39,28 @@ public class MainActivity extends AppCompatActivity {
                         .start());
 
 
-
-
-
         CardView mini_theme = findViewById(R.id.default_theme);
-        mini_theme.setOnClickListener(view -> {
-            new HeyRate(this)
-                    .setTheme(HeyRate.DEFAULT_THEME)
-                    .setShowAfterLaunch(1)
-                    .start();
+        mini_theme.setOnClickListener(view ->
+                new HeyRate(this)
+                        .setTheme(HeyRate.DEFAULT_THEME)
+                        .setTitle("Do You Like This App?")
+                        .setFeedbackTitle("Message")
+                        .setFeedbackButtonText("Message")
+                        .setLaterButtonText("Not Now")
+                        .setCancelButtonText("No")
+                        .setSendButtonText("Okay")
+                        .setEditTextHint("adlkadf d sdfa")
+                        .setBackgroundColor(Color.CYAN)
+                        .setHideLaterButton(true)
+                        .setContactEmail("ahmmedrejowan@gmail.com")
+                        .setPrimaryColor(Color.RED)
+                        .setRatingRequired(5)
+                        .setCornerRadius(10)
+                        .setSecondaryColor(Color.BLACK)
+                        .setAppIcon(R.mipmap.ic_launcher)
+                        .setShowAfterLaunch(1)
+                        .start());
 
-        });
 
         CardView simple_theme = findViewById(R.id.advanced_theme);
         simple_theme.setOnClickListener(view -> {

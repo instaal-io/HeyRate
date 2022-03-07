@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -26,8 +28,8 @@ public class HeyRate {
     public static final String DEFAULT_THEME = "default";
     public static final String ADVANCED_THEME = "advanced";
     private final Activity activity;
-    private int APP_ICON = 0;
     SharedPreferences sharedPreferences;
+    private int app_icon = 0;
     private String THEME = "default";
     private String main_title = "";
     private String main_des = "";
@@ -45,6 +47,11 @@ public class HeyRate {
     private boolean isCancelable = true;
     private String contact_email = "";
     private int show_after_launch = 0;
+    private String later_button_text = "";
+    private int rating_required = 4;
+    private int corner_radius = 10;
+    private boolean hide_feedback_button = false;
+    private boolean hide_later_button = false;
 
     public HeyRate(Activity activity) {
         this.activity = activity;
@@ -55,7 +62,7 @@ public class HeyRate {
     public void start() {
         boolean isRated = sharedPreferences.getBoolean("isRated", false);
         Log.d("TAG", "start: " + isRated);
-        if (!isRated){
+        if (!isRated) {
             if (show_after_launch == 0) {
                 chooseTheme();
             } else {
@@ -70,8 +77,7 @@ public class HeyRate {
     }
 
 
-
-    private void chooseTheme(){
+    private void chooseTheme() {
         switch (THEME) {
             case ADVANCED_THEME:
                 showAdvancedDialog();
@@ -86,7 +92,6 @@ public class HeyRate {
         }
 
     }
-
 
 
     private void showSimpleDialog() {
@@ -171,10 +176,12 @@ public class HeyRate {
                 desc.setTextColor(ContextCompat.getColor(activity, secondary_color));
                 feedBackButtonText.setTextColor(ContextCompat.getColor(activity, secondary_color));
                 cancelButtonText.setTextColor(ContextCompat.getColor(activity, secondary_color));
+                editText.setTextColor(ContextCompat.getColor(activity,secondary_color));
             } catch (Resources.NotFoundException notFoundException) {
                 desc.setTextColor(secondary_color);
                 feedBackButtonText.setTextColor(secondary_color);
                 cancelButtonText.setTextColor(secondary_color);
+                editText.setTextColor(secondary_color);
             }
         }
         if (background_color != 0) {
@@ -253,10 +260,101 @@ public class HeyRate {
         ratingLayout.setVisibility(View.VISIBLE);
         feedbackLayout.setVisibility(View.GONE);
 
+        CardView mainCard = dialog.findViewById(R.id.main_card);
+        mainCard.setRadius(corner_radius*4);
 
-        TextView feedbackButton = dialog.findViewById(R.id.feedback_button);
-        feedbackButton.setOnClickListener(view -> {
+        ImageView imageView = dialog.findViewById(R.id.app_icon);
 
+        if (app_icon != 0) {
+            imageView.setImageResource(app_icon);
+        }
+
+        TextView mainTitle, feedBackButtonText, laterButtonText, feedbackTitle, cancelButtonText, sendButtonText;
+        mainTitle = dialog.findViewById(R.id.main_text);
+        feedBackButtonText = dialog.findViewById(R.id.feedback_button);
+        laterButtonText = dialog.findViewById(R.id.later_button);
+        feedbackTitle = dialog.findViewById(R.id.feedback_text);
+        cancelButtonText = dialog.findViewById(R.id.cancel_button);
+        sendButtonText = dialog.findViewById(R.id.send_button);
+
+        if (hide_feedback_button){
+            feedBackButtonText.setVisibility(View.GONE);
+        } else {
+            feedBackButtonText.setVisibility(View.VISIBLE);
+        }
+
+        if (hide_later_button){
+            laterButtonText.setVisibility(View.GONE);
+        } else {
+            laterButtonText.setVisibility(View.VISIBLE);
+        }
+
+        EditText editText = dialog.findViewById(R.id.edit_text);
+
+
+        if (!edit_text_hint.equals("")) {
+            editText.setHint(edit_text_hint);
+        }
+
+        if (!main_title.equals("")) {
+            mainTitle.setText(main_title);
+        }
+
+        if (!feedback_button_text.equals("")) {
+            feedBackButtonText.setText(feedback_button_text);
+        }
+        if (!later_button_text.equals("")) {
+            laterButtonText.setText(later_button_text);
+        }
+
+        if (!feedback_title.equals("")) {
+            feedbackTitle.setText(feedback_title);
+        }
+        if (!cancel_button_text.equals("")) {
+            cancelButtonText.setText(cancel_button_text);
+        }
+
+        if (!send_button_text.equals("")) {
+            sendButtonText.setText(send_button_text);
+        }
+
+
+        if (primary_color != 0) {
+            try {
+                mainTitle.setTextColor(ContextCompat.getColor(activity, primary_color));
+                feedbackTitle.setTextColor(ContextCompat.getColor(activity, primary_color));
+                feedBackButtonText.setTextColor(ContextCompat.getColor(activity, primary_color));
+                sendButtonText.setTextColor(ContextCompat.getColor(activity, primary_color));
+
+            } catch (Resources.NotFoundException notFoundException) {
+                mainTitle.setTextColor(primary_color);
+                feedbackTitle.setTextColor(primary_color);
+                feedBackButtonText.setTextColor(primary_color);
+                sendButtonText.setTextColor(primary_color);
+            }
+
+        }
+        if (secondary_color != 0) {
+            try {
+                laterButtonText.setTextColor(ContextCompat.getColor(activity, secondary_color));
+                cancelButtonText.setTextColor(ContextCompat.getColor(activity, secondary_color));
+                editText.setTextColor(ContextCompat.getColor(activity,secondary_color));
+            } catch (Resources.NotFoundException notFoundException) {
+                laterButtonText.setTextColor(secondary_color);
+                cancelButtonText.setTextColor(secondary_color);
+                editText.setTextColor(secondary_color);
+            }
+        }
+        if (background_color != 0) {
+            try {
+                mainCard.setCardBackgroundColor(ContextCompat.getColor(activity, background_color));
+            } catch (Resources.NotFoundException notFoundException) {
+                mainCard.setCardBackgroundColor(background_color);
+            }
+        }
+
+
+        feedBackButtonText.setOnClickListener(view -> {
             if (ratingLayout.getVisibility() == View.VISIBLE) {
                 ratingLayout.setVisibility(View.GONE);
                 feedbackLayout.setVisibility(View.VISIBLE);
@@ -266,6 +364,37 @@ public class HeyRate {
             }
 
 
+        });
+
+
+        cancelButtonText.setOnClickListener(view -> dialog.dismiss());
+
+        RatingBar ratingBar = dialog.findViewById(R.id.ratingBar);
+        ratingBar.setOnRatingBarChangeListener((ratingBar1, v, b) -> {
+            int rating = (int) v;
+            if (rating >= rating_required) {
+                dialog.dismiss();
+                launchStore();
+            } else {
+                if (ratingLayout.getVisibility() == View.VISIBLE) {
+                    ratingLayout.setVisibility(View.GONE);
+                    feedbackLayout.setVisibility(View.VISIBLE);
+                } else {
+                    ratingLayout.setVisibility(View.VISIBLE);
+                    feedbackLayout.setVisibility(View.GONE);
+                }
+            }
+
+        });
+
+
+        sendButtonText.setOnClickListener(view -> {
+            if (editText.getText().length() < 25) {
+                editText.setError("" + (25 - editText.getText().length()) + " more characters to go");
+            } else {
+                dialog.dismiss();
+                sendEmail(editText.getText().toString());
+            }
         });
 
 
@@ -321,7 +450,7 @@ public class HeyRate {
     }
 
     private void sendEmail(String message) {
-        Log.e("TAG", "sendEmail: called" );
+        Log.e("TAG", "sendEmail: called");
         final String packageName = activity.getPackageName();
         PackageManager packageManager = activity.getPackageManager();
         String appName;
@@ -347,7 +476,6 @@ public class HeyRate {
         } else {
             Log.e("TAG", "sendEmail: Failed, No Email Set");
         }
-
 
 
     }
@@ -423,8 +551,20 @@ public class HeyRate {
         return this;
     }
 
+    public HeyRate setAppIcon(int appIcon) {
+        app_icon = appIcon;
+        return this;
+    }
 
+    public HeyRate setLaterButtonText(String laterButtonText) {
+        later_button_text = laterButtonText;
+        return this;
+    }
 
+    public HeyRate setRatingRequired(int ratingRequired) {
+        rating_required = ratingRequired;
+        return this;
+    }
 
     public HeyRate setCancelable(boolean cancelable) {
         isCancelable = cancelable;
@@ -436,11 +576,24 @@ public class HeyRate {
         return this;
     }
 
-    public HeyRate setShowAfterLaunch(int showAfterLaunch){
+    public HeyRate setShowAfterLaunch(int showAfterLaunch) {
         show_after_launch = showAfterLaunch;
         return this;
     }
 
+    public HeyRate setCornerRadius(int cornerRadius){
+        corner_radius = cornerRadius;
+        return this;
+    }
 
+    public HeyRate setHideFeedbackButton(boolean hideFeedbackButton){
+        hide_feedback_button = hideFeedbackButton;
+        return this;
+    }
+
+    public HeyRate setHideLaterButton(boolean hideLaterButton){
+        hide_later_button = hideLaterButton;
+        return this;
+    }
 
 }
