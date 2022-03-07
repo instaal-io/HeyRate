@@ -71,11 +71,9 @@ public class HeyRate {
         RelativeLayout ratingLayout = dialog.findViewById(R.id.rating_layout);
         RelativeLayout feedbackLayout = dialog.findViewById(R.id.feedback_layout);
 
-        ratingLayout.setVisibility(View.VISIBLE);
-        feedbackLayout.setVisibility(View.GONE);
+        CardView feedbackCard = dialog.findViewById(R.id.feedback_card);
 
         TextView mainTitle, desc, feedBackButtonText, rateNowButtonText, feedbackTitle, cancelButtonText, sendButtonText;
-
         mainTitle = dialog.findViewById(R.id.main_text);
         desc = dialog.findViewById(R.id.description);
         feedBackButtonText = dialog.findViewById(R.id.feedback_button);
@@ -83,6 +81,12 @@ public class HeyRate {
         feedbackTitle = dialog.findViewById(R.id.feedback_text);
         cancelButtonText = dialog.findViewById(R.id.cancel_button);
         sendButtonText = dialog.findViewById(R.id.send_button);
+
+
+
+        ratingLayout.setVisibility(View.VISIBLE);
+        feedbackLayout.setVisibility(View.GONE);
+
 
         if (!main_title.equals("")) {
             mainTitle.setText(main_title);
@@ -109,9 +113,7 @@ public class HeyRate {
         }
 
 
-        CardView feedbackButton = dialog.findViewById(R.id.feedback_card);
-        feedbackButton.setOnClickListener(view -> {
-
+        feedbackCard.setOnClickListener(view -> {
             if (ratingLayout.getVisibility() == View.VISIBLE) {
                 ratingLayout.setVisibility(View.GONE);
                 feedbackLayout.setVisibility(View.VISIBLE);
