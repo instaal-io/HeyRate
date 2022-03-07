@@ -241,13 +241,6 @@ public class HeyRate {
         return this;
     }
 
-//    private int primary_color = 0;
-//    private int secondary_color = 0;
-//    private int background_color = 0;
-//    private int positive_button_color = 0;
-//    private int negative_button_color = 0;
-//    private boolean isCancelable = false;
-
     public HeyRate setPrimaryColor(int primaryColor){
         primary_color = primaryColor;
         return this;
@@ -258,7 +251,25 @@ public class HeyRate {
         return this;
     }
 
+    public HeyRate setBackgroundColor(int backgroundColor){
+        background_color = backgroundColor;
+        return  this;
+    }
 
+    public HeyRate setPositiveButtonColor(int positiveButtonColor){
+        positive_button_color = positiveButtonColor;
+        return this;
+    }
+
+    public HeyRate setNegativeButtonColor(int negativeButtonColor){
+        negative_button_color = negativeButtonColor;
+        return this;
+    }
+
+    public HeyRate setCancelable(boolean cancelable){
+        isCancelable = cancelable;
+        return this;
+    }
 
 
 }
