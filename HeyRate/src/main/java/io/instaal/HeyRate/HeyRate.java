@@ -26,7 +26,7 @@ public class HeyRate {
     public static final String DEFAULT_THEME = "default";
     public static final String ADVANCED_THEME = "advanced";
     private final Activity activity;
-    private final int APP_ICON = 0;
+    private int APP_ICON = 0;
     SharedPreferences sharedPreferences;
     private String THEME = "default";
     private String main_title = "";
@@ -423,6 +423,9 @@ public class HeyRate {
         return this;
     }
 
+
+
+
     public HeyRate setCancelable(boolean cancelable) {
         isCancelable = cancelable;
         return this;
@@ -437,5 +440,7 @@ public class HeyRate {
         show_after_launch = showAfterLaunch;
         return this;
     }
+
+
 
 }

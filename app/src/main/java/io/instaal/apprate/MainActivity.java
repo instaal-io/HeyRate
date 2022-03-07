@@ -15,30 +15,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        HeyRate heyRate = new HeyRate(this);
-        heyRate.start();
 
 
         CardView default_theme = findViewById(R.id.simple_theme);
         default_theme.setOnClickListener(view ->
                 new HeyRate(this)
                         .setTheme(HeyRate.SIMPLE_THEME)
-                        .setTitle("Do You Like This App?")
-                        .setDescription("Please Give Us a Review")
-                        .setFeedbackButtonText("Message")
-                        .setRateButtonText("Rate")
-                        .setFeedbackTitle("Message")
-                        .setCancelButtonText("No")
-                        .setSendButtonText("Done")
-                        .setEditTextHint("Write Your Feedback")
-                        .setContactEmail("kmrejowan@gmail.com")
-                        .setBackgroundColor(Color.WHITE)
-                        .setPrimaryColor(Color.BLACK)
-                        .setSecondaryColor(Color.GRAY)
-                        .setNegativeButtonColor(Color.DKGRAY)
-                        .setPositiveButtonTextColor(Color.GREEN)
-                        .setCancelable(true)
-                        .setShowAfterLaunch(1)
+//                        .setTitle("Do You Like This App?")
+//                        .setDescription("Please Give Us a Review")
+//                        .setFeedbackButtonText("Message")
+//                        .setRateButtonText("Rate")
+//                        .setFeedbackTitle("Message")
+//                        .setCancelButtonText("No")
+//                        .setSendButtonText("Done")
+//                        .setEditTextHint("Write Your Feedback")
+//                        .setContactEmail("kmrejowan@gmail.com")
+//                        .setBackgroundColor(Color.WHITE)
+//                        .setPrimaryColor(Color.BLACK)
+//                        .setSecondaryColor(Color.GRAY)
+//                        .setNegativeButtonColor(Color.DKGRAY)
+//                        .setPositiveButtonTextColor(Color.GREEN)
+//                        .setCancelable(true)
+//                        .setShowAfterLaunch(1)
                         .start());
 
 
