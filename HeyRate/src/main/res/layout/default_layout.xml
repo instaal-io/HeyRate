@@ -86,7 +86,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Feedback"
+                        android:text="@string/feedback"
                         android:textColor="@color/theme_color_main"
                         android:textSize="16sp" />
 
@@ -97,7 +97,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Later"
+                        android:text="@string/later"
                         android:textColor="#666"
                         android:textSize="16sp" />
 
@@ -127,7 +127,7 @@
                     android:layout_marginBottom="5dp"
                     android:fontFamily="sans-serif-medium"
                     android:gravity="center"
-                    android:text="Feedback"
+                    android:text="@string/feedback"
                     android:textColor="@color/theme_color_main"
                     android:textSize="20sp" />
 
@@ -141,13 +141,14 @@
                     android:layout_marginEnd="15dp"
                     android:background="@drawable/edit_text_back"
                     android:gravity="top|start"
-                    android:hint="How could we do better? Give us some suggestions"
+                    android:hint="@string/how_could_we_do_better_give_us_some_suggestions"
                     android:inputType="textMultiLine|textCapSentences"
                     android:padding="5dp"
                     android:scrollbars="vertical"
                     android:textColor="#444"
                     android:textColorHint="#999"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    tools:ignore="Autofill" />
 
 
                 <LinearLayout
@@ -163,7 +164,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Cancel"
+                        android:text="@string/cancel"
                         android:textColor="@color/secondary_text_color"
                         android:textSize="16sp" />
 
@@ -174,7 +175,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Send"
+                        android:text="@string/send"
                         android:textColor="@color/theme_color_main"
                         android:textSize="16sp" />
 
