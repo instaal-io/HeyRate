@@ -77,6 +77,7 @@ public class HeyRate {
         CardView rateNowCard = dialog.findViewById(R.id.rate_now_card);
         CardView sendCard = dialog.findViewById(R.id.send_card);
         CardView mainCard = dialog.findViewById(R.id.main_card);
+        CardView cancelCard = dialog.findViewById(R.id.cancel_card);
 
         TextView mainTitle, desc, feedBackButtonText, rateNowButtonText, feedbackTitle, cancelButtonText, sendButtonText;
         mainTitle = dialog.findViewById(R.id.main_text);
@@ -163,7 +164,14 @@ public class HeyRate {
 
         }
         if (negative_button_color != 0) {
+            try {
+                cancelCard.setCardBackgroundColor(ContextCompat.getColor(activity, negative_button_color));
+                feedbackCard.setCardBackgroundColor(ContextCompat.getColor(activity, negative_button_color));
 
+            } catch (Resources.NotFoundException notFoundException) {
+                cancelCard.setCardBackgroundColor(negative_button_color);
+                feedbackCard.setCardBackgroundColor(negative_button_color);
+            }
         }
 
         feedbackCard.setOnClickListener(view -> {
@@ -177,7 +185,6 @@ public class HeyRate {
 
 
         });
-
 
         dialog.show();
 
