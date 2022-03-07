@@ -76,6 +76,7 @@ public class HeyRate {
         CardView feedbackCard = dialog.findViewById(R.id.feedback_card);
         CardView rateNowCard = dialog.findViewById(R.id.rate_now_card);
         CardView sendCard = dialog.findViewById(R.id.send_card);
+        CardView mainCard = dialog.findViewById(R.id.main_card);
 
         TextView mainTitle, desc, feedBackButtonText, rateNowButtonText, feedbackTitle, cancelButtonText, sendButtonText;
         mainTitle = dialog.findViewById(R.id.main_text);
@@ -85,7 +86,6 @@ public class HeyRate {
         feedbackTitle = dialog.findViewById(R.id.feedback_text);
         cancelButtonText = dialog.findViewById(R.id.cancel_button);
         sendButtonText = dialog.findViewById(R.id.send_button);
-
 
 
         ratingLayout.setVisibility(View.VISIBLE);
@@ -116,15 +116,14 @@ public class HeyRate {
             sendButtonText.setText(send_button_text);
         }
 
-        if (primary_color!=0){
+        if (primary_color != 0) {
             try {
-                mainTitle.setTextColor(ContextCompat.getColor(activity,primary_color));
+                mainTitle.setTextColor(ContextCompat.getColor(activity, primary_color));
                 feedbackTitle.setTextColor(ContextCompat.getColor(activity, primary_color));
                 rateNowCard.setCardBackgroundColor(ContextCompat.getColor(activity, primary_color));
                 sendCard.setCardBackgroundColor(ContextCompat.getColor(activity, primary_color));
 
-            }
-            catch (Resources.NotFoundException notFoundException){
+            } catch (Resources.NotFoundException notFoundException) {
                 mainTitle.setTextColor(primary_color);
                 feedbackTitle.setTextColor(primary_color);
                 rateNowCard.setCardBackgroundColor(primary_color);
@@ -133,16 +132,37 @@ public class HeyRate {
             }
 
         }
-        if (secondary_color!=0){
+        if (secondary_color != 0) {
+            try {
+                desc.setTextColor(ContextCompat.getColor(activity, secondary_color));
+                feedBackButtonText.setTextColor(ContextCompat.getColor(activity, secondary_color));
+                cancelButtonText.setTextColor(ContextCompat.getColor(activity, secondary_color));
+            } catch (Resources.NotFoundException notFoundException) {
+                desc.setTextColor(secondary_color);
+                feedBackButtonText.setTextColor(secondary_color);
+                cancelButtonText.setTextColor(secondary_color);
+            }
+        }
+        if (background_color != 0) {
+            try {
+                mainCard.setCardBackgroundColor(ContextCompat.getColor(activity, background_color));
+            } catch (Resources.NotFoundException notFoundException) {
+                mainCard.setCardBackgroundColor(background_color);
+            }
+        }
+        if (positive_button_text_color != 0) {
+
+            try {
+                rateNowButtonText.setTextColor(ContextCompat.getColor(activity, positive_button_text_color));
+                sendButtonText.setTextColor(ContextCompat.getColor(activity, positive_button_text_color));
+
+            } catch (Resources.NotFoundException notFoundException) {
+                rateNowButtonText.setTextColor(positive_button_text_color);
+                sendButtonText.setTextColor(positive_button_text_color);
+            }
 
         }
-        if (background_color!=0){
-
-        }
-        if (positive_button_text_color !=0){
-
-        }
-        if (negative_button_color!=0){
+        if (negative_button_color != 0) {
 
         }
 
@@ -276,32 +296,32 @@ public class HeyRate {
         return this;
     }
 
-    public HeyRate setPrimaryColor(int primaryColor){
+    public HeyRate setPrimaryColor(int primaryColor) {
         primary_color = primaryColor;
         return this;
     }
 
-    public HeyRate setSecondaryColor(int secondaryColor){
+    public HeyRate setSecondaryColor(int secondaryColor) {
         secondary_color = secondaryColor;
         return this;
     }
 
-    public HeyRate setBackgroundColor(int backgroundColor){
+    public HeyRate setBackgroundColor(int backgroundColor) {
         background_color = backgroundColor;
-        return  this;
+        return this;
     }
 
-    public HeyRate setPositiveButtonTextColor(int positiveButtonTextColor){
+    public HeyRate setPositiveButtonTextColor(int positiveButtonTextColor) {
         positive_button_text_color = positiveButtonTextColor;
         return this;
     }
 
-    public HeyRate setNegativeButtonColor(int negativeButtonColor){
+    public HeyRate setNegativeButtonColor(int negativeButtonColor) {
         negative_button_color = negativeButtonColor;
         return this;
     }
 
-    public HeyRate setCancelable(boolean cancelable){
+    public HeyRate setCancelable(boolean cancelable) {
         isCancelable = cancelable;
         return this;
     }
