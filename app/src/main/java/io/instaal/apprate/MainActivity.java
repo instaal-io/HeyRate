@@ -67,6 +67,22 @@ public class MainActivity extends AppCompatActivity {
         simple_theme.setOnClickListener(view -> {
             new HeyRate(this)
                     .setTheme(HeyRate.ADVANCED_THEME)
+                    .setTitle("")
+                    .setFeedbackTitle("")
+                    .setFeedbackButtonText("")
+                    .setLaterButtonText("")
+                    .setCancelButtonText("")
+                    .setSendButtonText("")
+                    .setEditTextHint("")
+                    .setBackgroundColor(Color.WHITE)
+                    .setHideLaterButton(false)
+                    .setHideFeedbackButton(false)
+                    .setContactEmail("ahmmedrejowan@gmail.com")
+                    .setPrimaryColor(io.instaal.HeyRate.R.color.theme_color_main)
+                    .setRatingRequired(5)
+                    .setCornerRadius(10)
+                    .setSecondaryColor(Color.BLACK)
+                    .setHeaderAnimation(HeyRate.ANIMATION_1)
                     .setShowAfterLaunch(1)
                     .start();
 
