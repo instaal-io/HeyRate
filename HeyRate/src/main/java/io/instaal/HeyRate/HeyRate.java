@@ -279,8 +279,8 @@ public class HeyRate {
         dialog.getWindow().setLayout(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
         dialog.setCancelable(isCancelable);
 
-        RelativeLayout ratingLayout = dialog.findViewById(R.id.rating_layout);
-        RelativeLayout feedbackLayout = dialog.findViewById(R.id.feedback_layout);
+        RelativeLayout ratingLayout = dialog.findViewById(R.id.rating_relative_layout);
+        RelativeLayout feedbackLayout = dialog.findViewById(R.id.feedback_relative_layout);
 
         ratingLayout.setVisibility(View.VISIBLE);
         feedbackLayout.setVisibility(View.GONE);

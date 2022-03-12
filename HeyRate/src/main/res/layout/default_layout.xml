@@ -31,7 +31,7 @@
                 tools:ignore="ContentDescription" />
 
             <RelativeLayout
-                android:id="@+id/rating_layout"
+                android:id="@+id/rating_relative_layout"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:orientation="vertical">
@@ -109,7 +109,7 @@
 
 
             <RelativeLayout
-                android:id="@+id/feedback_layout"
+                android:id="@+id/feedback_relative_layout"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:orientation="vertical"
