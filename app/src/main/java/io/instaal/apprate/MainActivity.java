@@ -3,6 +3,7 @@ package io.instaal.apprate;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -87,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
                     .start();
 
         });
+
+
 
 
     }

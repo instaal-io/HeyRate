@@ -839,4 +839,8 @@ public class HeyRate {
     }
 
 
+    public static class BasicTheme{
+
+    }
+
 }
