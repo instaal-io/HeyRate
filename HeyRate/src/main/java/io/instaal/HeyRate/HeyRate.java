@@ -282,8 +282,6 @@ public class HeyRate {
         RelativeLayout ratingLayout = dialog.findViewById(R.id.rating_relative_layout);
         RelativeLayout feedbackLayout = dialog.findViewById(R.id.feedback_relative_layout);
 
-        ratingLayout.setVisibility(View.VISIBLE);
-        feedbackLayout.setVisibility(View.GONE);
 
         CardView mainCard = dialog.findViewById(R.id.main_card);
         mainCard.setRadius(corner_radius*4);
@@ -320,6 +318,10 @@ public class HeyRate {
         if (!edit_text_hint.equals("")) {
             editText.setHint(edit_text_hint);
         }
+
+        ratingLayout.setVisibility(View.VISIBLE);
+        feedbackLayout.setVisibility(View.GONE);
+
 
         if (!main_title.equals("")) {
             mainTitle.setText(main_title);
