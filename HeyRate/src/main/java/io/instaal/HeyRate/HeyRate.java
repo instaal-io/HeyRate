@@ -58,6 +58,7 @@ public class HeyRate {
     private String image_select = "0";
     private boolean isImageOn = false;
 
+
     public static final String ANIMATION_1 = "anim1";
     public static final String ANIMATION_2 = "anim2";
     public static final String ANIMATION_3 = "anim3";
@@ -837,6 +838,16 @@ public class HeyRate {
     public HeyRate setHeaderImage(String headerImage) {
         image_select = headerImage;
         return this;
+
+    }
+
+    public static class BasicTheme{
+
+    }
+    public static class DefaultTheme{
+
+    }
+    public static class AdvancedTheme{
 
     }
 
