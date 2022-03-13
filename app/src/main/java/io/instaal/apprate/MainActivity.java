@@ -3,7 +3,6 @@ package io.instaal.apprate;
 import android.graphics.Color;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -55,11 +54,11 @@ public class MainActivity extends AppCompatActivity {
                         .setHideLaterButton(false)
                         .setHideFeedbackButton(false)
                         .setContactEmail("ahmmedrejowan@gmail.com")
-                        .setPrimaryColor(io.instaal.HeyRate.R.color.theme_color_main)
+                        .setPrimaryColor(io.instaal.HeyRate.R.color.lib_theme_color_main)
                         .setRatingRequired(5)
                         .setCornerRadius(10)
                         .setSecondaryColor(Color.BLACK)
-                        .setAppIcon(io.instaal.HeyRate.R.drawable.rating_default_icon)
+                        .setAppIcon(io.instaal.HeyRate.R.drawable.heyrate_icon_main)
                         .setShowAfterLaunch(1)
                         .start());
 
@@ -79,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                     .setHideLaterButton(false)
                     .setHideFeedbackButton(false)
                     .setContactEmail("ahmmedrejowan@gmail.com")
-                    .setPrimaryColor(io.instaal.HeyRate.R.color.theme_color_main)
+                    .setPrimaryColor(io.instaal.HeyRate.R.color.lib_theme_color_main)
                     .setRatingRequired(5)
                     .setCornerRadius(10)
                     .setSecondaryColor(Color.BLACK)

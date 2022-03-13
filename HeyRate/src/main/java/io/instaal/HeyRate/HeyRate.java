@@ -122,7 +122,7 @@ public class HeyRate {
     private void showSimpleDialog() {
         Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.simple_layout);
+        dialog.setContentView(R.layout.heyrate_basic_layout);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.getWindow().setLayout(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
         dialog.setCancelable(isCancelable);
@@ -274,7 +274,7 @@ public class HeyRate {
     private void showDefaultDialog() {
         Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.default_layout);
+        dialog.setContentView(R.layout.heyrate_default_layout);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.getWindow().setLayout(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
         dialog.setCancelable(isCancelable);
@@ -431,7 +431,7 @@ public class HeyRate {
     private void showAdvancedDialog() {
         Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.advanced_layout);
+        dialog.setContentView(R.layout.heyrate_advanced_layout);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.getWindow().setLayout(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
         dialog.setCancelable(isCancelable);
@@ -449,32 +449,32 @@ public class HeyRate {
         LottieAnimationView lottieAnimationView = dialog.findViewById(R.id.animation_view);
         switch (animation_select) {
             case ANIMATION_2:
-                lottieAnimationView.setAnimation(R.raw.fancy_animation_2);
+                lottieAnimationView.setAnimation(R.raw.heyrate_anim_2);
                 break;
             case ANIMATION_3:
-                lottieAnimationView.setAnimation(R.raw.fancy_animation_3);
+                lottieAnimationView.setAnimation(R.raw.heyrate_anim_3);
                 break;
             case ANIMATION_4:
-                lottieAnimationView.setAnimation(R.raw.fancy_animation_4);
+                lottieAnimationView.setAnimation(R.raw.heyrate_anim_4);
                 break;
             case ANIMATION_5:
-                lottieAnimationView.setAnimation(R.raw.fancy_animation_5);
+                lottieAnimationView.setAnimation(R.raw.heyrate_anim_5);
                 break;
             case ANIMATION_6:
-                lottieAnimationView.setAnimation(R.raw.fancy_animation_6);
+                lottieAnimationView.setAnimation(R.raw.heyrate_anim_6);
                 break;
             case ANIMATION_7:
-                lottieAnimationView.setAnimation(R.raw.fancy_animation_7);
+                lottieAnimationView.setAnimation(R.raw.heyrate_anim_7);
                 break;
             case ANIMATION_8:
-                lottieAnimationView.setAnimation(R.raw.fancy_animation_8);
+                lottieAnimationView.setAnimation(R.raw.heyrate_anim_8);
                 break;
             case ANIMATION_9:
-                lottieAnimationView.setAnimation(R.raw.fancy_animation_9);
+                lottieAnimationView.setAnimation(R.raw.heyrate_anim_9);
                 break;
             case ANIMATION_1:
             default:
-                lottieAnimationView.setAnimation(R.raw.fancy_animation_1);
+                lottieAnimationView.setAnimation(R.raw.heyrate_anim_1);
                 break;
         }
 
@@ -482,32 +482,32 @@ public class HeyRate {
 
         switch (image_select) {
             case IMAGE_2:
-                imageView.setImageResource(R.drawable.fancy_image_2);
+                imageView.setImageResource(R.drawable.heyrate_img_2);
                 break;
             case IMAGE_3:
-                imageView.setImageResource(R.drawable.fancy_image_3);
+                imageView.setImageResource(R.drawable.heyrate_img_3);
                 break;
             case IMAGE_4:
-                imageView.setImageResource(R.drawable.fancy_image_4);
+                imageView.setImageResource(R.drawable.heyrate_img_4);
                 break;
             case IMAGE_5:
-                imageView.setImageResource(R.drawable.fancy_image_5);
+                imageView.setImageResource(R.drawable.heyrate_img_5);
                 break;
             case IMAGE_6:
-                imageView.setImageResource(R.drawable.fancy_image_6);
+                imageView.setImageResource(R.drawable.heyrate_img_6);
                 break;
             case IMAGE_7:
-                imageView.setImageResource(R.drawable.fancy_image_7);
+                imageView.setImageResource(R.drawable.heyrate_img_7);
                 break;
             case IMAGE_8:
-                imageView.setImageResource(R.drawable.fancy_image_8);
+                imageView.setImageResource(R.drawable.heyrate_img_8);
                 break;
             case IMAGE_9:
-                imageView.setImageResource(R.drawable.fancy_image_9);
+                imageView.setImageResource(R.drawable.heyrate_img_9);
                 break;
             case IMAGE_1:
             default:
-                imageView.setImageResource(R.drawable.fancy_image_1);
+                imageView.setImageResource(R.drawable.heyrate_img_1);
                 break;
         }
 
