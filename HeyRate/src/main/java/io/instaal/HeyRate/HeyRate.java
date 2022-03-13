@@ -109,7 +109,7 @@ public class HeyRate {
                 showAdvancedDialog();
                 break;
             case SIMPLE_THEME:
-                showSimpleDialog();
+                showBasicDialog();
                 break;
             case DEFAULT_THEME:
             default:
@@ -120,7 +120,7 @@ public class HeyRate {
     }
 
 
-    private void showSimpleDialog() {
+    private void showBasicDialog() {
         Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.heyrate_basic_layout);
