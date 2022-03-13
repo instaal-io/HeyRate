@@ -45,7 +45,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="@string/share_your_experiences"
-                        android:textColor="@color/theme_color_main"
+                        android:textColor="@color/lib_theme_color_main"
                         android:textSize="17sp" />
 
                     <View
@@ -67,7 +67,7 @@
                     android:layout_marginEnd="20dp"
                     android:gravity="center"
                     android:text="@string/desc_title"
-                    android:textColor="@color/secondary_text_color"
+                    android:textColor="@color/lib_secondary_text_color"
                     android:textSize="16sp" />
 
 
@@ -93,7 +93,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:text="@string/feedback"
-                            android:textColor="@color/secondary_text_color"
+                            android:textColor="@color/lib_secondary_text_color"
                             android:textSize="16sp" />
 
 
@@ -106,7 +106,7 @@
                         android:layout_height="40dp"
                         android:layout_marginStart="1dp"
                         android:layout_weight="1"
-                        app:cardBackgroundColor="@color/theme_color_main"
+                        app:cardBackgroundColor="@color/lib_theme_color_main"
                         app:cardCornerRadius="2dp">
 
                         <TextView
@@ -152,7 +152,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="@string/feedback"
-                        android:textColor="@color/theme_color_main"
+                        android:textColor="@color/lib_theme_color_main"
                         android:textSize="17sp" />
 
                     <View
@@ -174,7 +174,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/edit_text_back"
+                    android:background="@drawable/heyrate_edit_text_back"
                     android:gravity="top|start"
                     android:hint="@string/how_could_we_do_better_give_us_some_suggestions"
                     android:inputType="textMultiLine|textCapSentences"
@@ -209,7 +209,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:text="@string/cancel"
-                            android:textColor="@color/secondary_text_color"
+                            android:textColor="@color/lib_secondary_text_color"
                             android:textSize="16sp" />
 
 
@@ -222,7 +222,7 @@
                         android:layout_height="40dp"
                         android:layout_marginStart="1dp"
                         android:layout_weight="1"
-                        app:cardBackgroundColor="@color/theme_color_main"
+                        app:cardBackgroundColor="@color/lib_theme_color_main"
                         app:cardCornerRadius="2dp">
 
                         <TextView
