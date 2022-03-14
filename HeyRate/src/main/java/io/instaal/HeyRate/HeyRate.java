@@ -382,11 +382,18 @@ public class HeyRate {
 
 
     public static class DefaultTheme {
+
+        public static final String ICON_1 = "icon1";
+        public static final String ICON_2 = "icon2";
+        public static final String ICON_3 = "icon3";
+        public static final String ICON_4 = "icon4";
+        public static final String ICON_5 = "icon5";
+        public static final String ICON_6 = "icon6";
+        public static final String ICON_7 = "icon7";
+        public static final String ICON_8 = "icon8";
+        public static final String ICON_9 = "icon9";
+
         private final Activity activity;
-        private final String THEME = "default";
-        private final String animation_select = "0";
-        private final String image_select = "0";
-        private final boolean isImageOn = false;
         SharedPreferences sharedPreferences;
         private int app_icon = 0;
         private String main_title = "";
@@ -406,6 +413,7 @@ public class HeyRate {
         private int corner_radius = 10;
         private boolean hide_feedback_button = false;
         private boolean hide_later_button = false;
+        private String pre_installed_icon = "";
 
 
         public DefaultTheme(Activity activity) {
@@ -482,6 +490,10 @@ public class HeyRate {
             return this;
         }
 
+        public DefaultTheme setPreInstalledIcon(String preInstalledIcon) {
+            pre_installed_icon = preInstalledIcon;
+            return this;
+        }
 
         public DefaultTheme setRatingRequired(int ratingRequired) {
             rating_required = ratingRequired;
@@ -543,9 +555,44 @@ public class HeyRate {
 
             ImageView imageView = dialog.findViewById(R.id.app_icon);
 
+            if (app_icon == 0) {
+                switch (pre_installed_icon) {
+                    case ICON_2:
+                        imageView.setImageResource(R.drawable.heyrate_icon_main_2);
+                        break;
+                    case ICON_3:
+                        imageView.setImageResource(R.drawable.heyrate_icon_main_3);
+                        break;
+                    case ICON_4:
+                        imageView.setImageResource(R.drawable.heyrate_icon_main_4);
+                        break;
+                    case ICON_5:
+                        imageView.setImageResource(R.drawable.heyrate_icon_main_5);
+                        break;
+                    case ICON_6:
+                        imageView.setImageResource(R.drawable.heyrate_icon_main_6);
+                        break;
+                    case ICON_7:
+                        imageView.setImageResource(R.drawable.heyrate_icon_main_7);
+                        break;
+                    case ICON_8:
+                        imageView.setImageResource(R.drawable.heyrate_icon_main_8);
+                        break;
+                    case ICON_9:
+                        imageView.setImageResource(R.drawable.heyrate_icon_main_9);
+                        break;
+                    case ICON_1:
+                    default:
+                        imageView.setImageResource(R.drawable.heyrate_icon_main);
+                        break;
+
+                }
+            }
+
             if (app_icon != 0) {
                 imageView.setImageResource(app_icon);
             }
+
 
             TextView mainTitle, feedBackButtonText, laterButtonText, feedbackTitle, cancelButtonText, sendButtonText;
             mainTitle = dialog.findViewById(R.id.main_text);

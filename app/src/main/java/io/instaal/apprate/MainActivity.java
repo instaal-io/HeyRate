@@ -1,6 +1,5 @@
 package io.instaal.apprate;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +23,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         CardView mini_theme = findViewById(R.id.default_theme);
-        mini_theme.setOnClickListener(view -> new HeyRate.DefaultTheme(this).start());
+        mini_theme.setOnClickListener(view ->
+                new HeyRate
+                        .DefaultTheme(this)
+                        .setPreInstalledIcon(HeyRate.DefaultTheme.ICON_3)
+                        .start());
 
 
         CardView simple_theme = findViewById(R.id.advanced_theme);
