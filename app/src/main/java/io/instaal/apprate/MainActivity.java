@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         CardView simple_theme = findViewById(R.id.advanced_theme);
-        simple_theme.setOnClickListener(view -> new HeyRate.AdvancedTheme(this).start());
+        simple_theme.setOnClickListener(view -> new HeyRate.AdvanceTheme(this).start());
 
 
     }

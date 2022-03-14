@@ -27,26 +27,6 @@ import com.airbnb.lottie.LottieAnimationView;
 public class HeyRate {
 
 
-    public static final String ANIMATION_1 = "anim1";
-    public static final String ANIMATION_2 = "anim2";
-    public static final String ANIMATION_3 = "anim3";
-    public static final String ANIMATION_4 = "anim4";
-    public static final String ANIMATION_5 = "anim5";
-    public static final String ANIMATION_6 = "anim6";
-    public static final String ANIMATION_7 = "anim7";
-    public static final String ANIMATION_8 = "anim8";
-    public static final String ANIMATION_9 = "anim9";
-    public static final String IMAGE_1 = "img1";
-    public static final String IMAGE_2 = "img2";
-    public static final String IMAGE_3 = "img3";
-    public static final String IMAGE_4 = "img4";
-    public static final String IMAGE_5 = "img5";
-    public static final String IMAGE_6 = "img6";
-    public static final String IMAGE_7 = "img7";
-    public static final String IMAGE_8 = "img8";
-    public static final String IMAGE_9 = "img9";
-
-
     protected HeyRate() {
     }
 
@@ -780,10 +760,27 @@ public class HeyRate {
     }
 
 
-    public static class AdvancedTheme {
+    public static class AdvanceTheme {
 
+        public static final String ANIMATION_1 = "anim1";
+        public static final String ANIMATION_2 = "anim2";
+        public static final String ANIMATION_3 = "anim3";
+        public static final String ANIMATION_4 = "anim4";
+        public static final String ANIMATION_5 = "anim5";
+        public static final String ANIMATION_6 = "anim6";
+        public static final String ANIMATION_7 = "anim7";
+        public static final String ANIMATION_8 = "anim8";
+        public static final String ANIMATION_9 = "anim9";
+        public static final String IMAGE_1 = "img1";
+        public static final String IMAGE_2 = "img2";
+        public static final String IMAGE_3 = "img3";
+        public static final String IMAGE_4 = "img4";
+        public static final String IMAGE_5 = "img5";
+        public static final String IMAGE_6 = "img6";
+        public static final String IMAGE_7 = "img7";
+        public static final String IMAGE_8 = "img8";
+        public static final String IMAGE_9 = "img9";
         private final Activity activity;
-        private final String THEME = "default";
         SharedPreferences sharedPreferences;
         private String main_title = "";
         private String feedback_button_text = "";
@@ -805,121 +802,133 @@ public class HeyRate {
         private String animation_select = "0";
         private String image_select = "0";
         private boolean isImageOn = false;
+        private int custom_image = 0;
+        private int custom_animation = 0;
 
 
-        public AdvancedTheme(Activity activity) {
+        public AdvanceTheme(Activity activity) {
             this.activity = activity;
             sharedPreferences = this.activity.getApplicationContext().getSharedPreferences("HeyRate", Activity.MODE_PRIVATE);
 
         }
 
-        public AdvancedTheme setTitle(String title) {
+        public AdvanceTheme setTitle(String title) {
             main_title = title;
             return this;
         }
 
-        public AdvancedTheme setFeedbackTitle(String feedbackTitle) {
+        public AdvanceTheme setFeedbackTitle(String feedbackTitle) {
             feedback_title = feedbackTitle;
             return this;
         }
 
 
-        public AdvancedTheme setFeedbackButtonText(String feedbackButtonText) {
+        public AdvanceTheme setFeedbackButtonText(String feedbackButtonText) {
             feedback_button_text = feedbackButtonText;
             return this;
         }
 
 
-        public AdvancedTheme setEditTextHint(String editTextHint) {
+        public AdvanceTheme setEditTextHint(String editTextHint) {
             edit_text_hint = editTextHint;
             return this;
         }
 
-        public AdvancedTheme setCancelButtonText(String cancelButtonText) {
+        public AdvanceTheme setCancelButtonText(String cancelButtonText) {
             cancel_button_text = cancelButtonText;
             return this;
         }
 
-        public AdvancedTheme setSendButtonText(String sendButtonText) {
+        public AdvanceTheme setSendButtonText(String sendButtonText) {
             send_button_text = sendButtonText;
             return this;
         }
 
-        public AdvancedTheme setPrimaryColor(int primaryColor) {
+        public AdvanceTheme setPrimaryColor(int primaryColor) {
             primary_color = primaryColor;
             return this;
         }
 
-        public AdvancedTheme setSecondaryColor(int secondaryColor) {
+        public AdvanceTheme setSecondaryColor(int secondaryColor) {
             secondary_color = secondaryColor;
             return this;
         }
 
-        public AdvancedTheme setBackgroundColor(int backgroundColor) {
+        public AdvanceTheme setBackgroundColor(int backgroundColor) {
             background_color = backgroundColor;
             return this;
         }
 
 
-        public AdvancedTheme setCancelable(boolean cancelable) {
+        public AdvanceTheme setCancelable(boolean cancelable) {
             isCancelable = cancelable;
             return this;
         }
 
-        public AdvancedTheme setContactEmail(String contactEmail) {
+        public AdvanceTheme setContactEmail(String contactEmail) {
             contact_email = contactEmail;
             return this;
         }
 
-        public AdvancedTheme setShowAfterLaunch(int showAfterLaunch) {
+        public AdvanceTheme setShowAfterLaunch(int showAfterLaunch) {
             show_after_launch = showAfterLaunch;
             return this;
         }
 
 
-        public AdvancedTheme setRatingRequired(int ratingRequired) {
+        public AdvanceTheme setRatingRequired(int ratingRequired) {
             rating_required = ratingRequired;
             return this;
         }
 
 
-        public AdvancedTheme setCornerRadius(int cornerRadius) {
+        public AdvanceTheme setCornerRadius(int cornerRadius) {
             corner_radius = cornerRadius;
             return this;
         }
 
-        public AdvancedTheme setHideFeedbackButton(boolean hideFeedbackButton) {
+        public AdvanceTheme setHideFeedbackButton(boolean hideFeedbackButton) {
             hide_feedback_button = hideFeedbackButton;
             return this;
         }
 
-        public AdvancedTheme setHideLaterButton(boolean hideLaterButton) {
+        public AdvanceTheme setHideLaterButton(boolean hideLaterButton) {
             hide_later_button = hideLaterButton;
             return this;
         }
 
-        public AdvancedTheme setLaterButtonText(String laterButtonText) {
+        public AdvanceTheme setLaterButtonText(String laterButtonText) {
             later_button_text = laterButtonText;
             return this;
         }
 
 
-        public AdvancedTheme setImageInsteadAnim(boolean imageInsteadAnim) {
+        public AdvanceTheme setImageInsteadAnim(boolean imageInsteadAnim) {
             isImageOn = imageInsteadAnim;
             return this;
         }
 
 
-        public AdvancedTheme setHeaderAnimation(String headerAnimation) {
+        public AdvanceTheme setHeaderAnimation(String headerAnimation) {
             animation_select = headerAnimation;
             return this;
         }
 
 
-        public AdvancedTheme setHeaderImage(String headerImage) {
+        public AdvanceTheme setHeaderImage(String headerImage) {
             image_select = headerImage;
             return this;
 
+        }
+
+        public AdvanceTheme setCustomHeaderAnim(int customHeaderAnim) {
+            custom_animation = customHeaderAnim;
+            return this;
+        }
+
+        public AdvanceTheme setCustomHeaderImage(int customHeaderImage) {
+            custom_image = customHeaderImage;
+            return this;
         }
 
 
@@ -943,7 +952,7 @@ public class HeyRate {
         private void showAdvancedDialog() {
             Dialog dialog = new Dialog(activity);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-            dialog.setContentView(R.layout.heyrate_advanced_layout);
+            dialog.setContentView(R.layout.heyrate_advance_layout);
             dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
             dialog.getWindow().setLayout(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
             dialog.setCancelable(isCancelable);
@@ -959,68 +968,78 @@ public class HeyRate {
             mainCard.setRadius(corner_radius * 4);
 
             LottieAnimationView lottieAnimationView = dialog.findViewById(R.id.animation_view);
-            switch (animation_select) {
-                case ANIMATION_2:
-                    lottieAnimationView.setAnimation(R.raw.heyrate_anim_2);
-                    break;
-                case ANIMATION_3:
-                    lottieAnimationView.setAnimation(R.raw.heyrate_anim_3);
-                    break;
-                case ANIMATION_4:
-                    lottieAnimationView.setAnimation(R.raw.heyrate_anim_4);
-                    break;
-                case ANIMATION_5:
-                    lottieAnimationView.setAnimation(R.raw.heyrate_anim_5);
-                    break;
-                case ANIMATION_6:
-                    lottieAnimationView.setAnimation(R.raw.heyrate_anim_6);
-                    break;
-                case ANIMATION_7:
-                    lottieAnimationView.setAnimation(R.raw.heyrate_anim_7);
-                    break;
-                case ANIMATION_8:
-                    lottieAnimationView.setAnimation(R.raw.heyrate_anim_8);
-                    break;
-                case ANIMATION_9:
-                    lottieAnimationView.setAnimation(R.raw.heyrate_anim_9);
-                    break;
-                case ANIMATION_1:
-                default:
-                    lottieAnimationView.setAnimation(R.raw.heyrate_anim_1);
-                    break;
+
+            if (custom_animation == 0) {
+                switch (animation_select) {
+                    case ANIMATION_2:
+                        lottieAnimationView.setAnimation(R.raw.heyrate_anim_2);
+                        break;
+                    case ANIMATION_3:
+                        lottieAnimationView.setAnimation(R.raw.heyrate_anim_3);
+                        break;
+                    case ANIMATION_4:
+                        lottieAnimationView.setAnimation(R.raw.heyrate_anim_4);
+                        break;
+                    case ANIMATION_5:
+                        lottieAnimationView.setAnimation(R.raw.heyrate_anim_5);
+                        break;
+                    case ANIMATION_6:
+                        lottieAnimationView.setAnimation(R.raw.heyrate_anim_6);
+                        break;
+                    case ANIMATION_7:
+                        lottieAnimationView.setAnimation(R.raw.heyrate_anim_7);
+                        break;
+                    case ANIMATION_8:
+                        lottieAnimationView.setAnimation(R.raw.heyrate_anim_8);
+                        break;
+                    case ANIMATION_9:
+                        lottieAnimationView.setAnimation(R.raw.heyrate_anim_9);
+                        break;
+                    case ANIMATION_1:
+                    default:
+                        lottieAnimationView.setAnimation(R.raw.heyrate_anim_1);
+                        break;
+                }
+            } else {
+                lottieAnimationView.setAnimation(custom_animation);
             }
+
 
             ImageView imageView = dialog.findViewById(R.id.image_view);
 
-            switch (image_select) {
-                case IMAGE_2:
-                    imageView.setImageResource(R.drawable.heyrate_img_2);
-                    break;
-                case IMAGE_3:
-                    imageView.setImageResource(R.drawable.heyrate_img_3);
-                    break;
-                case IMAGE_4:
-                    imageView.setImageResource(R.drawable.heyrate_img_4);
-                    break;
-                case IMAGE_5:
-                    imageView.setImageResource(R.drawable.heyrate_img_5);
-                    break;
-                case IMAGE_6:
-                    imageView.setImageResource(R.drawable.heyrate_img_6);
-                    break;
-                case IMAGE_7:
-                    imageView.setImageResource(R.drawable.heyrate_img_7);
-                    break;
-                case IMAGE_8:
-                    imageView.setImageResource(R.drawable.heyrate_img_8);
-                    break;
-                case IMAGE_9:
-                    imageView.setImageResource(R.drawable.heyrate_img_9);
-                    break;
-                case IMAGE_1:
-                default:
-                    imageView.setImageResource(R.drawable.heyrate_img_1);
-                    break;
+            if (custom_image == 0) {
+                switch (image_select) {
+                    case IMAGE_2:
+                        imageView.setImageResource(R.drawable.heyrate_img_2);
+                        break;
+                    case IMAGE_3:
+                        imageView.setImageResource(R.drawable.heyrate_img_3);
+                        break;
+                    case IMAGE_4:
+                        imageView.setImageResource(R.drawable.heyrate_img_4);
+                        break;
+                    case IMAGE_5:
+                        imageView.setImageResource(R.drawable.heyrate_img_5);
+                        break;
+                    case IMAGE_6:
+                        imageView.setImageResource(R.drawable.heyrate_img_6);
+                        break;
+                    case IMAGE_7:
+                        imageView.setImageResource(R.drawable.heyrate_img_7);
+                        break;
+                    case IMAGE_8:
+                        imageView.setImageResource(R.drawable.heyrate_img_8);
+                        break;
+                    case IMAGE_9:
+                        imageView.setImageResource(R.drawable.heyrate_img_9);
+                        break;
+                    case IMAGE_1:
+                    default:
+                        imageView.setImageResource(R.drawable.heyrate_img_1);
+                        break;
+                }
+            } else {
+                imageView.setImageResource(custom_image);
             }
 
             if (isImageOn) {
