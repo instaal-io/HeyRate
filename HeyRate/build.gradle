@@ -1,6 +1,10 @@
 plugins {
     id 'com.android.library'
+    id 'maven-publish'
 }
+
+group = 'com.github.instaal-io'
+version = '1.0'
 
 android {
     compileSdk 32
@@ -34,4 +38,17 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.airbnb.android:lottie:5.0.1'
 
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.jitpack'
+                artifactId = 'instaal-io'
+                version = '1.0'
+            }
+        }
+    }
 }
