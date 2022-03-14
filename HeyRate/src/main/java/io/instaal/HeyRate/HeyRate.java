@@ -18,7 +18,6 @@ import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
@@ -26,10 +25,6 @@ import com.airbnb.lottie.LottieAnimationView;
 
 
 public class HeyRate {
-
-    public static final String SIMPLE_THEME = "simple";
-    public static final String DEFAULT_THEME = "default";
-    public static final String ADVANCED_THEME = "advanced";
 
 
     public static final String ANIMATION_1 = "anim1";
@@ -69,6 +64,7 @@ public class HeyRate {
         private String send_button_text = "";
         private int primary_color = 0;
         private int secondary_color = 0;
+
         private int background_color = 0;
         private int positive_button_text_color = 0;
         private int negative_button_color = 0;
@@ -387,9 +383,12 @@ public class HeyRate {
 
     public static class DefaultTheme {
         private final Activity activity;
+        private final String THEME = "default";
+        private final String animation_select = "0";
+        private final String image_select = "0";
+        private final boolean isImageOn = false;
         SharedPreferences sharedPreferences;
         private int app_icon = 0;
-        private final String THEME = "default";
         private String main_title = "";
         private String feedback_button_text = "";
         private String feedback_title = "";
@@ -407,9 +406,6 @@ public class HeyRate {
         private int corner_radius = 10;
         private boolean hide_feedback_button = false;
         private boolean hide_later_button = false;
-        private final String animation_select = "0";
-        private final String image_select = "0";
-        private final boolean isImageOn = false;
 
 
         public DefaultTheme(Activity activity) {
@@ -464,7 +460,6 @@ public class HeyRate {
             background_color = backgroundColor;
             return this;
         }
-
 
 
         public DefaultTheme setCancelable(boolean cancelable) {
@@ -741,8 +736,8 @@ public class HeyRate {
     public static class AdvancedTheme {
 
         private final Activity activity;
-        SharedPreferences sharedPreferences;
         private final String THEME = "default";
+        SharedPreferences sharedPreferences;
         private String main_title = "";
         private String feedback_button_text = "";
         private String feedback_title = "";
@@ -788,7 +783,6 @@ public class HeyRate {
         }
 
 
-
         public AdvancedTheme setEditTextHint(String editTextHint) {
             edit_text_hint = editTextHint;
             return this;
@@ -818,8 +812,6 @@ public class HeyRate {
             background_color = backgroundColor;
             return this;
         }
-
-
 
 
         public AdvancedTheme setCancelable(boolean cancelable) {

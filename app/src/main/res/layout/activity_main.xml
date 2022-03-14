@@ -9,7 +9,7 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/simple_theme"
+        android:id="@+id/basic_theme"
         android:layout_margin="10dp"
         android:layout_width="100dp"
         android:layout_height="50dp"
@@ -22,7 +22,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="Simple"
+            android:text="Basic"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
